@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20CS062 SHIVARAJ PATIL</title>
+    <script>
+        var Student = class {
+            constructor(firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+//
+                Object.defineProperties(this, {
+                    fullname: {
+                        set: function (text) {
+                            const parts = text.split(' ');
+                            this.firstName = parts[0];
+                            this.lastName = parts[1];
+                        },
+                        get: function () {
+                            return this.firstName + ' ' + this.lastName
+                        }
+                    }
+                });
+            }
+        }
+        var Student1 = new Student('shivaraj','patil')
+        console.log(Student1)
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

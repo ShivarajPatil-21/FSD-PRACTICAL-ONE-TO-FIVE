@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>20CS062 Practical 3a</title>
+
+    <script>
+        let intervalID;
+
+        function toggleColor() {
+            let e = document.getElementById('flashtext');
+            e.style.color = e.style.color == 'red' ? 'blue' : 'red';
+        }
+
+        var intervalTAG;
+        
+        function toggleColors() {
+            var b = document.getElementById('textflash');
+            b.style.color = b.style.color == 'red' ? 'blue' : 'red';
+        }
+
+       
+        function start() {
+            intervalID = setInterval(toggleColor, 1000);
+            intervalTAG = setInterval(toggleColors, 1000);
+        }
+
+        
+
+    </script>
+</head>
+
+<body>
+<H1>HELLO WORLD</H1>
+    <p id="flashtext">Shivaraj's javascript set-interval</p>
+    <p id="textflash">Shivaraj's javascript set-interval</p>
+    <button onclick="start()">Start</button>
+    
+
+    
+</body>
+
+</html>
