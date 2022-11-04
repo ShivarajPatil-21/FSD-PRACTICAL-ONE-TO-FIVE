@@ -63,7 +63,7 @@ const Details = () => {
                                     <Modal.Header closeButton>
                                         <Modal.Title>{logindata[0].name}</Modal.Title>
                                     </Modal.Header>
-                                    <Modal.Body>20CS016 Vatsal Ghoghari</Modal.Body>
+                                    <Modal.Body>20cs062 shivaraj patil</Modal.Body>
                                     <Modal.Footer>
                                         <Button variant="secondary" onClick={handleClose}>
                                             Close

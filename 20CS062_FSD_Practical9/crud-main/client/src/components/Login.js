@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { useHistory } from 'react-router-dom';
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 
-    const history = useNavigate();
+    const history = useHistory();
 
     const [inpval, setInpval] = useState({
         email: "",
@@ -37,26 +37,18 @@ const Login = () => {
     const addData = (e) => {
         e.preventDefault();
 
-        const getuserArr = localStorage.getItem("useryoutube");
+        const getuserArr = localStorage.getItem("index");
         console.log(getuserArr);
 
         const { email, password } = inpval;
         if (email === "") {
-            toast.error('email field is requred', {
-                position: "top-center",
-            });
+            alert('email field is requred');
         } else if (!email.includes("@")) {
-            toast.error('plz enter valid email addres', {
-                position: "top-center",
-            });
+            alert('plz enter valid email addres');
         } else if (password === "") {
-            toast.error('password field is requred', {
-                position: "top-center",
-            });
+            alert('password field is requred');
         } else if (password.length < 5) {
-            toast.error('password length greater five', {
-                position: "top-center",
-            });
+            alert('password length greater five');
         } else {
 
             if (getuserArr && getuserArr.length) {
@@ -72,7 +64,8 @@ const Login = () => {
 
                     localStorage.setItem("user_login", JSON.stringify(userlogin));
 
-                    history("/details");
+                    // history.push("/extrapage")
+                    history.push("/home");
                 }
             }
         }
@@ -84,7 +77,7 @@ const Login = () => {
             <div className="container mt-3">
                 <section className='d-flex justify-content-between'>
                     <div className="left_data mt-3 p-3" style={{ width: "100%" }}>
-                        <h4 style={{ color: "red", fontWeight: "bold", textAlign: "center" }}>20CS016 Vatsal Ghoghari</h4>
+                        <h4 style={{ color: "red", fontWeight: "bold", textAlign: "center" }}>20cs062 shivaraj patil</h4>
                         <h3 className='text-center col-lg-6'>Sign IN</h3>
                         <Form >
 
@@ -105,7 +98,7 @@ const Login = () => {
                     </div>
 
                 </section>
-                <ToastContainer />
+                {/* <ToastContainer /> */}
             </div>
         </>
     );

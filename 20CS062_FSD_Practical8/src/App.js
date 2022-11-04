@@ -25,7 +25,7 @@ function App() {
     <>
       <Container className="my-4">
         <Stack direction="horizontal" gap="2" className="mb-4">
-          <h2 style={{ color: "blue" }}>20CS016 Vatsal Ghoghari </h2>
+          <h2 style={{ color: "blue" }}>20cs062 shivaraj patil </h2>
           <h2 className="me-auto">Budgets</h2>
           <Button variant="primary" onClick={() => setShowAddBudgetModal(true)}>
             Add Budget
